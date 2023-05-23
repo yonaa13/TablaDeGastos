@@ -1,5 +1,7 @@
-#root {
-  margin: 0 ;
-  padding: 0;
+body,head {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
   text-align: center;
+  background: #066447;
 }
