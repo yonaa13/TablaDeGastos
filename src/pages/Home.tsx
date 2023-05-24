@@ -1,4 +1,3 @@
-import React from "react";
 import { ContainerBoard, H1 } from "./Home.styled";
 export const Home = () => {
   return (
