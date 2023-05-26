@@ -1,5 +1,1 @@
-export const services = () => {
-  return (
-    <div>services</div>
-  )
-}
+export const getData = []

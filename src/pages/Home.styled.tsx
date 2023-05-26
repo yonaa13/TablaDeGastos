@@ -1,25 +1,16 @@
 import styled from "styled-components";
 
-export const ContainerBoard = styled.h1`
-  margin-left: 10%;
-  width: 80%;
-  height: 90%;
-`;
-export const H1 = styled.h1`
-padding-bottom: 20px;
-  color: red;
-`;
-export const Tr = styled.tr`
-  box-sizing: border-box;
-  background-color: #1616c4;
-  border: 1px solid blue;
+export const Container = styled.h1`
   display: flex;
   width: 100%;
-  height: auto;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+  svg {
+    font-size: 3rem;
+  }
 `;
-export const Td = styled.td`
-  font-size: 1.2rem;
-  width: 100%;
-  color:#fff;
-  border: 1px solid red;
+export const H1 = styled.h1`
+  font-size: 2rem;
 `;
