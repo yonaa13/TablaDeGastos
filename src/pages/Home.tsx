@@ -1,7 +1,8 @@
 import { User } from "../mockup/mockup";
 import { InputCustom } from "../Components/inputCustom/InputCustom";
-import { Container,ContainerWelcome, H1 } from "./Home.styled";
-import { FiCoffee } from "react-icons/fi";
+import { ButtomCustom } from "../Components/buttomCustom/ButtomCustom";
+import { Container, ContainerWelcome, H1 } from "./Home.styled";
+import { FiCoffee, FiActivity } from "react-icons/fi";
 export const Home = () => {
   const { name, lastName } = User;
   return (
@@ -12,7 +13,8 @@ export const Home = () => {
           Welcome {name} {lastName}
         </H1>
       </ContainerWelcome>
-      <InputCustom type="text" width="100px"/>
+      <InputCustom type="text" width="250px" />
+      <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
     </Container>
   );
 };
