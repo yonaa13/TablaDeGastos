@@ -5,6 +5,7 @@ export const Container = styled.h1`
   width: 100%;
   height: 100vh;
   flex-direction: column;
+  justify-content: center;
 `;
 export const ContainerWelcome = styled.h1`
   display: flex;

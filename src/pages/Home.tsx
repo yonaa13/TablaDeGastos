@@ -1,12 +1,14 @@
 import { User } from "../mockup/mockup";
 import { InputCustom } from "../Components/inputCustom/InputCustom";
 import { ButtomCustom } from "../Components/buttomCustom/ButtomCustom";
+import { Loader } from "../Components/loader/Loader";
 import { Container, ContainerWelcome, H1 } from "./Home.styled";
 import { FiCoffee, FiActivity } from "react-icons/fi";
 export const Home = () => {
   const { name, lastName } = User;
   return (
     <Container>
+      <Loader/>
       <ContainerWelcome>
         <FiCoffee />
         <H1>
