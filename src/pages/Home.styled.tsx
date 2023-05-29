@@ -1,11 +1,22 @@
 import styled from "styled-components";
 
-export const H1 = styled.h1`
-  color: red;
+export const Container = styled.h1`
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
 `;
-export const ContainerBoard = styled.h1`
-  background-color: aquamarine;
-  margin-left: 10%;
-  width: 80%;
-  height: 90%;
+export const ContainerWelcome = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+  svg {
+    font-size: 3rem;
+  }
+`;
+
+export const H1 = styled.h1`
+  font-size: 2rem;
 `;
