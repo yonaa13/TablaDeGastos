@@ -13,6 +13,7 @@ export const  Button = styled.button`
     font-size: 1.2rem;
     font-family: monospace;
     background-color: #248f6b;
+    cursor: pointer;
 `
 export const  Icon = styled.div`
     padding: 0 3px;

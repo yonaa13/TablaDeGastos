@@ -1,4 +1,5 @@
 export interface InputProps{
-   type: string
-   width:string
+   type?: string
+   width?:string
+   placeholder?:string
 }
