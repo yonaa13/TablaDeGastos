@@ -6,6 +6,8 @@ export const Container = styled.h1`
   height: 100vh;
   flex-direction: column;
   justify-content: center;
+  background-color: #0d6640;
+ padding: 0;
 `;
 export const ContainerWelcome = styled.h1`
   display: flex;
