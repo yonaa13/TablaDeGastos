@@ -33,7 +33,7 @@ export const Home = () => {
           Welcome {name} {lastName}
         </H1>
       </ContainerWelcome>
-      <InputCustom type="text" width="250px" placeholder="Introducir algo" />
+      <InputCustom type="text" width="200px" placeholder="Introducir algo" />
       <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
     </Container>
   );

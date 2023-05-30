@@ -22,7 +22,9 @@ export const SelectCustom = () => {
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
+            backgroundColor:"#5adfb3",
             color:["red"],
+            
             borderColor: state.isFocused ? "grey" : "#fff",
           }),
         }}
