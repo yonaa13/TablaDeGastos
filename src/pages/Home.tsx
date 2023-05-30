@@ -1,3 +1,4 @@
+import { useState} from 'react'
 import { User } from "../mockup/mockup";
 import { InputCustom } from "../components/inputCustom/InputCustom";
 import { ButtomCustom } from "../components/buttomCustom/ButtomCustom";
@@ -6,7 +7,8 @@ import { Modal } from "../components/modal/Modal";
 import { SelectCustom } from "../components/selectCustom/SelectCustom";
 import { Container, ContainerWelcome, H1 } from "./Home.styled";
 import { FiCoffee, FiActivity } from "react-icons/fi";
-import { useState } from "react";
+
+
 
 export const Home = () => {
   const [isActive, setIsActive] = useState(false);
@@ -14,7 +16,7 @@ export const Home = () => {
   //<Loader/>
   const getModal = () => {
     if (isActive) {
-      return <Modal isActive />;
+      return <Modal/>;
     }
   };
   return (
