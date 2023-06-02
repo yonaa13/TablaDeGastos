@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { LoaderProps } from "./Loader.interface";
 export const Loading = styled.div`
   position: absolute;
+  background-color: #0d6640;;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +10,7 @@ export const Loading = styled.div`
   height: 100%;
   gap: 12px;
   font-size: 3rem;
+  z-index:10000 ;
 `;
 export const BounceAnimation = keyframes`
   0% { 

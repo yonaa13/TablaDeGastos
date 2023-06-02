@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { User } from "../../mockup/mockup";
 import { InputCustom } from "../../components/inputCustom/InputCustom";
 import { ButtomCustom } from "../../components/buttomCustom/ButtomCustom";
-//import { Loader } from "../Components/loader/Loader";
+import { Loader } from "../../components/loader/Loader";
 import { Modal } from "../../components/modal/Modal";
 import { SelectCustom } from "../../components/selectCustom/SelectCustom";
 import {
@@ -18,12 +18,28 @@ import { FiCoffee, FiActivity } from "react-icons/fi";
 
 export const Home = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const [count, setCount] = useState(0);
   const { name, lastName } = User;
-  //<Loader/>
+
   const getModal = () => (isActive ? <Modal /> : null);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCount(count + 1);
+    }, 5000);
+    if (count == 1) {
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const loadingComponent = () => {
+    if (count == 0) {
+      return <Loader />;
+    }
+  };
   return (
     <Container>
+      {loadingComponent()}
       {getModal()}
       <ContainerModal>
         <OpenModal
@@ -33,7 +49,13 @@ export const Home = () => {
         >
           AbrirModal
         </OpenModal>
-        <CloseModal onClick={() => setIsActive(false)}>Cerra Modal</CloseModal>
+        <CloseModal
+          onClick={() => {
+            setIsActive(false);
+          }}
+        >
+          Cerra Modal
+        </CloseModal>
       </ContainerModal>
       <ContainerHome isActive={isActive}>
         <ContainerWelcome>
