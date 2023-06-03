@@ -10,7 +10,7 @@ export const Loading = styled.div`
   height: 100%;
   gap: 12px;
   font-size: 3rem;
-  z-index:10000 ;
+  z-index:100 ;
 `;
 export const BounceAnimation = keyframes`
   0% { 

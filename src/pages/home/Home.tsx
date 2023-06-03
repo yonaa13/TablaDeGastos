@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { User } from "../../mockup/mockup";
+import { User } from "../../_mockup_/mockup";
 import { InputCustom } from "../../components/inputCustom/InputCustom";
 import { ButtomCustom } from "../../components/buttomCustom/ButtomCustom";
 import { Loader } from "../../components/loader/Loader";
@@ -21,8 +21,6 @@ export const Home = () => {
   const [count, setCount] = useState(0);
   const { name, lastName } = User;
 
-  const getModal = () => (isActive ? <Modal /> : null);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setCount(count + 1);
@@ -40,7 +38,7 @@ export const Home = () => {
   return (
     <Container>
       {loadingComponent()}
-      {getModal()}
+      {isActive && <Modal/>}
       <ContainerModal>
         <OpenModal
           onClick={() => {
