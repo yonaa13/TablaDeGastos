@@ -5,6 +5,7 @@ import { ButtomCustom } from "../../components/buttomCustom/ButtomCustom";
 import { Loader } from "../../components/loader/Loader";
 import { Modal } from "../../components/modal/Modal";
 import { SelectCustom } from "../../components/selectCustom/SelectCustom";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   ContainerWelcome,
@@ -13,6 +14,7 @@ import {
   ContainerModal,
   H1,
   ContainerHome,
+  RedirectLogin,
 } from "./Home.styled";
 import { FiCoffee, FiActivity } from "react-icons/fi";
 
@@ -20,7 +22,7 @@ export const Home = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [count, setCount] = useState(0);
   const { name, lastName } = User;
-
+  const navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
       setCount(count + 1);
@@ -38,7 +40,7 @@ export const Home = () => {
   return (
     <Container>
       {loadingComponent()}
-      {isActive && <Modal/>}
+      {isActive && <Modal />}
       <ContainerModal>
         <OpenModal
           onClick={() => {
@@ -66,6 +68,9 @@ export const Home = () => {
         <InputCustom type="text" width="200px" placeholder="Introducir algo" />
         <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
       </ContainerHome>
+      <RedirectLogin onClick={() => navigate("/")}>
+        <ButtomCustom label="Login" />
+      </RedirectLogin>
     </Container>
   );
 };
