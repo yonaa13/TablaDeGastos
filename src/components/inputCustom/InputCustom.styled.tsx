@@ -13,6 +13,7 @@ export const Input = styled.input<InputProps>`
   text-transform: capitalize;
   border: none;
   border-bottom: 1.5px solid #d1adad;
+  font-size: 1rem;
   :focus {
     outline: none;
     border-bottom: 1.5px solid #171212;

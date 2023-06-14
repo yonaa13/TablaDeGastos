@@ -15,6 +15,7 @@ import {
   H1,
   ContainerHome,
   RedirectLogin,
+  RedirectTabla,
 } from "./Home.styled";
 import { FiCoffee, FiActivity } from "react-icons/fi";
 
@@ -71,6 +72,9 @@ export const Home = () => {
       <RedirectLogin onClick={() => navigate("/")}>
         <ButtomCustom label="Login" />
       </RedirectLogin>
+      <RedirectTabla onClick={() => navigate("/tabla")}>
+        <ButtomCustom label="Tabla" />
+      </RedirectTabla>
     </Container>
   );
 };

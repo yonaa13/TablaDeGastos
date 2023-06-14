@@ -1,0 +1,50 @@
+export const Registros = [
+  {
+    category: "Sueldo",
+    Descripcion: "Sueldo Pinapp",
+    Monto: "1005330",
+    Completado: "1005330",
+    Real: "0",
+    Proyeccion: "1005330",
+  },
+  {
+    category: "Sueldo",
+    Descripcion: "Sueldo ITR",
+    Monto: "249000",
+    Completado: "0",
+    Real: "1005330",
+    Proyeccion: "1254330",
+  },
+  {
+    category: "Alquiler",
+    Descripcion: "Alquiler",
+    Monto: "48000",
+    Completado: "48000",
+    Real: "1005330",
+    Proyeccion: "1206330",
+  },
+  {
+    category: "Alquiler",
+    Descripcion: "Expensas",
+    Monto: "5500",
+    Completado: "",
+    Real: "957330",
+    Proyeccion: "1200830",
+  },
+  {
+    category: "Servicio Depto",
+    Descripcion: "Luz",
+    Monto: "10000",
+    Completado: "",
+    Real: "957330",
+    Proyeccion: "1190830",
+  },
+  {
+    category: "Servicio Depto",
+    Descripcion: "Gaz",
+    Monto: "2500",
+    Completado: "",
+    Real: "957330",
+    Proyeccion: "1188330",
+  }
+];

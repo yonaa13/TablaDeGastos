@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HomeProps } from "../Home.interface";
+import { HomeProps } from "./Home.interface";
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -40,5 +40,10 @@ export const H1 = styled.h1`
 export const RedirectLogin = styled.h1`
   position: absolute;
   right: 12px;
+  bottom: 12px;
+`;
+export const RedirectTabla = styled.h1`
+  position: absolute;
+  left: 12px;
   bottom: 12px;
 `;
