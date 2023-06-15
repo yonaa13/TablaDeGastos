@@ -5,6 +5,7 @@ import { ButtomCustom } from "../../components/buttomCustom/ButtomCustom";
 import { Loader } from "../../components/loader/Loader";
 import { Modal } from "../../components/modal/Modal";
 import { SelectCustom } from "../../components/selectCustom/SelectCustom";
+import { NavBar } from "../../components/navbar/NavBar";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
@@ -60,6 +61,7 @@ export const Home = () => {
       </ContainerModal>
       <ContainerHome isActive={isActive}>
         <ContainerWelcome>
+          <NavBar/>
           <SelectCustom />
           <FiCoffee />
           <H1>
