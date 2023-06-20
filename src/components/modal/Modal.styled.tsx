@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-
 export const ContainerModal = styled.div`
-position: absolute;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +10,7 @@ position: absolute;
   margin-top: 12px;
   background-color: #0c8a2e;
   border-radius: 50px;
-  z-index: 1000px;
+  z-index: 1000;
   color: #fff;
+  font-size: 3rem;
 `;

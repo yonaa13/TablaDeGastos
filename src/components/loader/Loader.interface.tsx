@@ -1,3 +1,3 @@
-export interface LoaderProps{
-    delay:string
+export interface LoaderProps {
+  delay: string;
 }

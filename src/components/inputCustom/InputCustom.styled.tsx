@@ -10,11 +10,10 @@ export const ContainerInput = styled.div`
 export const Input = styled.input<InputProps>`
   width: ${({ width }) => width};
   border-radius: 50px;
-  color: #fff;
-  padding-left: 23px;
   text-transform: capitalize;
   border: none;
   border-bottom: 1.5px solid #d1adad;
+  font-size: 1rem;
   :focus {
     outline: none;
     border-bottom: 1.5px solid #171212;

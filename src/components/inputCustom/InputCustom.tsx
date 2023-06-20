@@ -5,7 +5,7 @@ export const InputCustom: FC<InputProps> = ({
   type = "text",
   width = "250px",
   placeholder,
-}):any => {
+}): any => {
   return (
     <ContainerInput>
       <Input type={type} width={width} placeholder={placeholder} />
