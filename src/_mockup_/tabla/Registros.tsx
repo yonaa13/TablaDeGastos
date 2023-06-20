@@ -1,5 +1,6 @@
 export const Registros = [
   {
+    id: 1,
     category: "Sueldo",
     Descripcion: "Sueldo Pinapp",
     Monto: "1005330",
@@ -8,6 +9,7 @@ export const Registros = [
     Proyeccion: "1005330",
   },
   {
+    id: 2,
     category: "Sueldo",
     Descripcion: "Sueldo ITR",
     Monto: "249000",
@@ -16,6 +18,7 @@ export const Registros = [
     Proyeccion: "1254330",
   },
   {
+    id: 3,
     category: "Alquiler",
     Descripcion: "Alquiler",
     Monto: "48000",
@@ -24,6 +27,7 @@ export const Registros = [
     Proyeccion: "1206330",
   },
   {
+    id: 4,
     category: "Alquiler",
     Descripcion: "Expensas",
     Monto: "5500",
@@ -32,6 +36,7 @@ export const Registros = [
     Proyeccion: "1200830",
   },
   {
+    id: 5,
     category: "Servicio Depto",
     Descripcion: "Luz",
     Monto: "10000",
@@ -40,6 +45,7 @@ export const Registros = [
     Proyeccion: "1190830",
   },
   {
+    id: 6,
     category: "Servicio Depto",
     Descripcion: "Gaz",
     Monto: "2500",

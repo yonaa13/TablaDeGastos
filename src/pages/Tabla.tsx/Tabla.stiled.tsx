@@ -41,3 +41,13 @@ export const TdTitle = styled(Td)`
   background-color: #64856f;
   font-weight: bold;
 `;
+export const TdIcon = styled(Td)`
+  color: #000000;
+  background-color: #64856f;
+  font-weight: bold;
+  svg{
+    inline-size: 1.3rem;
+   padding: 0px 3px;
+   color: #1b134e;
+  }
+`;

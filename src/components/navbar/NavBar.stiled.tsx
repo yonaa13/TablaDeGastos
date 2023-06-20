@@ -14,9 +14,8 @@ export const ContainerNavBar = styled.div<PropsNavBar>`
   color: white;
   border-bottom: 3px solid grey;
   padding-left: 12px;
-  font-size: 1rem;
   svg {
-    font-size: 1.3rem;
+    inline-size: 1.3rem;
     color: red;
     transform: rotate(${({ isActive }) => (isActive ? "180deg" : "")});
   }
@@ -28,6 +27,7 @@ export const ContainerIcon = styled.div`
   position: relative;
   display: none;
   right: -12%;
+  cursor: pointer;
   @media (max-width: 720px) {
     display: block;
   }
@@ -41,13 +41,13 @@ export const Ul = styled.ul<PropsNavBar>`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 82px;
+    gap: 52px;
     right: 12px;
     top: 42px;
     z-index: 10000;
     background-color: #179b59;
-    width: 200px;
-    height: 150px;
+    width: 190px;
+    height: 130px;
   }
 `;
 
