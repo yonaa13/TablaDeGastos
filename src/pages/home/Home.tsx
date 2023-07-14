@@ -23,6 +23,7 @@ import { FiCoffee, FiActivity } from "react-icons/fi";
 export const Home = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [count, setCount] = useState(0);
+  const [tes, setTes] = useState<string | number>("");
   const { name, lastName } = User;
   const navigate = useNavigate();
   useEffect(() => {
@@ -61,14 +62,19 @@ export const Home = () => {
       </ContainerModal>
       <ContainerHome isActive={isActive}>
         <ContainerWelcome>
-          <NavBar/>
+          <NavBar />
           <SelectCustom />
           <FiCoffee />
           <H1>
             Welcome {name} {lastName}
           </H1>
         </ContainerWelcome>
-        <InputCustom type="text" width="200px" placeholder="Introducir algo" />
+        <InputCustom
+          type="text"
+          width="200px"
+          placeholder="Introducir algo"
+          setValue={setTes}
+        />
         <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
       </ContainerHome>
       <RedirectLogin onClick={() => navigate("/")}>

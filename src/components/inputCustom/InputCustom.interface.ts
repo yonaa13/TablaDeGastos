@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react"
-
 export interface Props{
     type?: string
     width?:string

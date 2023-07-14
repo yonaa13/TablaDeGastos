@@ -18,7 +18,6 @@ export const ModalTabla: FC<PropsModal> = ({ id, closeModal }) => {
             <IconClose onClick={() => closeModal(false)}>
               <FaTimes />
             </IconClose>
-
             <p>
               Categoria:<Span>{ele.categoria}</Span>{" "}
             </p>

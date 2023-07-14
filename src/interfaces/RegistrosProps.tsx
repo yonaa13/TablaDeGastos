@@ -1,6 +1,5 @@
-
 export interface RegistrosProps {
-  id:number
+  id: number;
   category: string;
   Descripcion: string;
   Monto: string;
