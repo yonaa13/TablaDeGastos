@@ -21,7 +21,7 @@ export const ContainerHome = styled.div<HomeProps>`
   opacity: ${({ isActive }) => (isActive ? "0.3" : "1")};
 `;
 export const OpenModal = styled.h1`
-  padding: 12px;
+  padding-top: 70px;
   color: #fff;
 `;
 export const CloseModal = styled(OpenModal)``;

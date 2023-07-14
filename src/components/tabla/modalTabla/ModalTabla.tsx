@@ -1,25 +1,43 @@
 import { FC } from "react";
-import { useGlobalContext } from "../../../context/GlobalContext";
+import { data } from "../../../firabase/DataBase";
 import { PropsModal } from "./PropsModal";
+import { FaTimes } from "react-icons/Fa";
 import {
   ContainerModal,
   ContainerCategory,
-  Span
+  Span,
+  IconClose,
 } from "../../tabla/modalTabla/ModalTabla.stiled";
-export const ModalTabla: FC<PropsModal> = ({ id }) => {
-  const { registrosContext } = useGlobalContext();
-  const registro = registrosContext.filter((ele) => ele.id == id);
+export const ModalTabla: FC<PropsModal> = ({ id, closeModal }) => {
+  const registro = data().filter((ele) => ele.id == id);
   return (
     <ContainerModal>
       {registro.map((ele) => {
         return (
           <ContainerCategory>
-            <p>Categoria:<Span>{ele.category}</Span> </p>
-            <p>Descripcion: <Span>{ele.Descripcion}</Span></p>
-            <p>Monto:<Span>{ele.Monto}</Span> </p>
-            <p>Completado:<Span>{ele.Completado}</Span> </p>
-            <p> Real:<Span>{ele.Real}</Span> </p>
-            <p>Proyeccion:<Span>{ele.Proyeccion}</Span> </p>
+            <IconClose onClick={() => closeModal(false)}>
+              <FaTimes />
+            </IconClose>
+
+            <p>
+              Categoria:<Span>{ele.categoria}</Span>{" "}
+            </p>
+            <p>
+              Descripcion: <Span>{ele.descripcion}</Span>
+            </p>
+            <p>
+              Monto:<Span>{ele.monto}</Span>{" "}
+            </p>
+            <p>
+              Completado:<Span>{ele.completado}</Span>{" "}
+            </p>
+            <p>
+              {" "}
+              Real:<Span>{ele.real}</Span>{" "}
+            </p>
+            <p>
+              Proyeccion:<Span>{ele.proyeccion}</Span>{" "}
+            </p>
           </ContainerCategory>
         );
       })}

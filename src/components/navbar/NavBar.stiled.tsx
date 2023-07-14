@@ -42,15 +42,18 @@ export const Ul = styled.ul<PropsNavBar>`
     align-items: center;
     justify-content: center;
     gap: 52px;
-    right: 12px;
-    top: 42px;
+    right: 0px;
+    top: 58px;
     z-index: 10000;
     background-color: #179b59;
-    width: 190px;
+    width: 150px;
     height: 130px;
+    border-radius: 10px;
+    svg {
+      display: none;
+    }
   }
 `;
-
 export const Li = styled.li`
   position: relative;
   display: flex;
@@ -61,17 +64,20 @@ export const Li = styled.li`
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  @media (max-width: 720px) {
-  }
 `;
 export const SubUl = styled.ul<PropsNavBar>`
   position: absolute;
   display: ${({ isActive }) => (isActive ? "block" : "none")};
   z-index: 1000;
   background-color: #179b59;
-  width: 170px;
+  width: 160px;
   margin-top: 170px;
   box-shadow: 8px 2px 5px black;
+  @media (max-width: 720px) {
+    border-radius: 10px;
+    margin-top: 150px;
+    right:-30px;
+  }
 `;
 export const LiUser = styled(Li)`
   position: absolute;

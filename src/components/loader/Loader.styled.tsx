@@ -2,6 +2,8 @@ import styled, { keyframes } from "styled-components";
 import { LoaderProps } from "./Loader.interface";
 export const Loading = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   background-color: #0d6640;;
   display: flex;
   justify-content: center;

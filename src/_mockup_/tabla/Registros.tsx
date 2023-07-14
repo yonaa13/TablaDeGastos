@@ -47,7 +47,7 @@ export const Registros = [
   {
     id: 6,
     category: "Servicio Depto",
-    Descripcion: "Gaz",
+    Descripcion: "Gas",
     Monto: "2500",
     Completado: "",
     Real: "957330",

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { InputProps } from "./InputCustom.interface";
+import { Props } from "./InputCustom.interface";
 
 export const ContainerInput = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const ContainerInput = styled.div`
   width: 100%;
   margin-top: 12px;
 `;
-export const Input = styled.input<InputProps>`
+export const Input:any = styled.input<Props>`
   width: ${({ width }) => width};
   border-radius: 50px;
   text-transform: capitalize;
