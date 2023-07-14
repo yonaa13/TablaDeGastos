@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { data } from "../../../firabase/DataBase";
 import { PropsModal } from "./PropsModal";
-import { FaTimes } from "react-icons/Fa";
+import { FaTimes } from "react-icons/fa";
 import {
   ContainerModal,
   ContainerCategory,

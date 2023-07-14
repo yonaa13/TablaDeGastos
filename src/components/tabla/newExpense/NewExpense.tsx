@@ -8,28 +8,26 @@ import {
   SaveExpense,
 } from "./NewExpense.stiled";
 import { PropsGastos } from "./NewExpense.interface";
-import { FaTimes } from "react-icons/Fa";
+import { FaTimes } from "react-icons/fa";
 import { guardarDato } from "../../../firabase/DataBase";
 export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
-
   const [categoria, setCategoria] = useState<string | number>();
   const [descripcion, setDescripcion] = useState<string | number>();
   const [monto, setMonto] = useState<string | number>();
   const [completado, setCompletado] = useState<string | number>();
   const [real, setReal] = useState<string | number>();
   const [proyeccion, setProyeccion] = useState<string | number>();
-  const handleClick = ()=>{
+  const handleClick = () => {
     const gasto = {
-        categoria:categoria,
-        descripcion:descripcion,
-        monto:monto,
-        completado:completado,
-        proyeccion:proyeccion
-    }
-   guardarDato('gastos',gasto)
-  }
-  
-  
+      categoria: categoria,
+      descripcion: descripcion,
+      monto: monto,
+      completado: completado,
+      proyeccion: proyeccion,
+    };
+    guardarDato("gastos", gasto);
+  };
+
   return (
     <Container>
       <CloseModalGasttos>
@@ -73,7 +71,7 @@ export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
         setValue={setProyeccion}
       />
 
-      <SaveExpense onClick={() => handleClick() }>
+      <SaveExpense onClick={() => handleClick()}>
         <ButtomCustom label="Agregar" />
       </SaveExpense>
     </Container>
