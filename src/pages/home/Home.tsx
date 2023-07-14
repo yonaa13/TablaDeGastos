@@ -72,9 +72,10 @@ export const Home = () => {
         <InputCustom
           type="text"
           width="200px"
-          placeholder="Introducir algo"
+          placeholder="Introducir Nombre"
           setValue={setTes}
         />
+        <p> {tes}</p>
         <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
       </ContainerHome>
       <RedirectLogin onClick={() => navigate("/")}>
