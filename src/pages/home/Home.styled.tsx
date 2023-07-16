@@ -23,8 +23,13 @@ export const ContainerHome = styled.div<HomeProps>`
 export const OpenModal = styled.h1`
   padding-top: 70px;
   color: #fff;
+  font-size: 1rem;
+padding-left: 15px;
 `;
-export const CloseModal = styled(OpenModal)``;
+export const CloseModal = styled(OpenModal)`
+padding-left: 0px;
+padding-right: 15px;
+`;
 export const ContainerWelcome = styled.div`
   display: flex;
   align-items: center;
@@ -41,9 +46,17 @@ export const RedirectLogin = styled.h1`
   position: absolute;
   right: 12px;
   bottom: 12px;
+  @media (max-width: 720px) {
+    width: 10%;
+    right: 140px;
+  }
 `;
 export const RedirectTabla = styled.h1`
   position: absolute;
   left: 12px;
   bottom: 12px;
+  @media (max-width: 720px) {
+    width: 10%;
+    left: 0%;
+  }
 `;

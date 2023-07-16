@@ -4,7 +4,6 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -29,7 +28,7 @@ export const H1 = styled.h1`
   align-items: center;
   margin-bottom: 40px;
   gap: 22px;
-  svg{
+  svg {
     color: #30a8c6;
     font-size: 30px;
     cursor: pointer;
@@ -72,27 +71,27 @@ export const ContainerLabel = styled.div`
   width: 80%;
   display: flex;
   justify-content: space-around;
-  padding-left: 4px;
   @media (max-width: 720px) {
     width: 350px;
   }
 `;
 export const Label = styled.label`
-  width: 200px;
+  width: 150px;
   display: flex;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: #fff;
 `;
 export const LabelMonto = styled(Label)`
-  color:black;
+  color: black;
   font-weight: 900;
+  width: 100px;
 `;
 export const ContainerIconsDelete = styled(ContainerIcons)`
-   width: auto;
+  width: auto;
 `;
 
 export const ContainerModal = styled.div`
-   position: absolute;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;

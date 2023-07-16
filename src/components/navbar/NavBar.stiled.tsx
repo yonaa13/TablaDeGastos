@@ -20,13 +20,12 @@ export const ContainerNavBar = styled.div<PropsNavBar>`
     transform: rotate(${({ isActive }) => (isActive ? "180deg" : "")});
   }
   @media (max-width: 720px) {
-    justify-content: center;
+    justify-content: start;
   }
 `;
 export const ContainerIcon = styled.div`
   position: relative;
   display: none;
-  right: -12%;
   cursor: pointer;
   @media (max-width: 720px) {
     display: block;
