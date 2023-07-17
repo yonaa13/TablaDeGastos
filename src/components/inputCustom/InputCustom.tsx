@@ -15,7 +15,9 @@ export const InputCustom: FC<Props> = ({
         width={width}
         placeholder={placeholder}
         value={value}
-        onChange={(e: { target: { value: string } }) => setValue(e.target.value)}
+        onChange={(e: { target: { value: string } }) =>
+          setValue(e.target.value)
+        }
       />
     </ContainerInput>
   );

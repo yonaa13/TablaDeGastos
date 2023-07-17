@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
+import { ButtonProps } from "./Buttom.interface";
 export const ContainerButton = styled.div``;
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 12px auto;
-  min-width: 200px;
+  min-width: ${({ width }) => width};
   height: 32px;
   color: #ffffff;
   border-radius: 50px;
@@ -16,5 +16,5 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 export const Icon = styled.div`
-  padding-right:12px ;
+  padding-right: 12px;
 `;

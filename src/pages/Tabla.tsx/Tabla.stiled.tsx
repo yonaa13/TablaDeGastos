@@ -3,19 +3,21 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   display: flex;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #0d6640;
   padding: 0;
   color: #fff;
+  overflow: hidden;
 `;
 export const ContainerLista = styled.div`
   display: flex;
   width: 90%;
   min-width: 480px;
-  height: 50px;
+  height: 40px;
   justify-content: center;
   align-items: center;
   padding: 0;
@@ -47,44 +49,49 @@ export const RedirectHome = styled.div`
     color: black;
     font-weight: bolder;
   }
-  @media (max-width: 720px) {
-    position: absolute;
-    top: 12px;
-    right: 28px;
-  }
 `;
 
 export const ContainerIcons = styled.div`
-  width: 14%;
+  width: 10%;
   color: #000000;
   font-weight: bold;
   cursor: pointer;
   svg {
-    inline-size: 1.7rem;
     font-size: 1.5rem;
     padding: 0px 3px;
     color: #1b134e;
+    @media (max-width: 720px) {
+      font-size: 1rem;
+      padding: 0px;
+    }
+  }
+  @media (max-width: 720px) {
+    padding: 0px svg {
+      font-size: 1rem;
+      padding: 0px;
+    }
   }
 `;
 
 export const ContainerLabel = styled.div`
-  width: 80%;
+  width: 60%;
   display: flex;
-  justify-content: space-around;
-  @media (max-width: 720px) {
-    width: 350px;
-  }
+  justify-content: space-evenly;
 `;
 export const Label = styled.label`
-  width: 150px;
   display: flex;
   font-size: 0.9rem;
   color: #fff;
+  @media (max-width: 720px) {
+    width: 60px;
+  }
 `;
 export const LabelMonto = styled(Label)`
   color: black;
   font-weight: 900;
-  width: 100px;
+  @media (max-width: 520px) {
+    width: 70px;
+  }
 `;
 export const ContainerIconsDelete = styled(ContainerIcons)`
   width: auto;

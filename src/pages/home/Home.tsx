@@ -79,10 +79,10 @@ export const Home = () => {
         <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
       </ContainerHome>
       <RedirectLogin onClick={() => navigate("/")}>
-        <ButtomCustom label="Login" />
+        <ButtomCustom label="Login" width="150px" />
       </RedirectLogin>
       <RedirectTabla onClick={() => navigate("/tabla")}>
-        <ButtomCustom label="Tabla" />
+        <ButtomCustom label="Tabla" width="150px" />
       </RedirectTabla>
     </Container>
   );

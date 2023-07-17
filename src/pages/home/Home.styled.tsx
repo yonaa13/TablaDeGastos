@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HomeProps } from "./Home.interface";
 export const Container = styled.div`
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
@@ -24,11 +24,11 @@ export const OpenModal = styled.h1`
   padding-top: 70px;
   color: #fff;
   font-size: 1rem;
-padding-left: 15px;
+  padding-left: 15px;
 `;
 export const CloseModal = styled(OpenModal)`
-padding-left: 0px;
-padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 15px;
 `;
 export const ContainerWelcome = styled.div`
   display: flex;
