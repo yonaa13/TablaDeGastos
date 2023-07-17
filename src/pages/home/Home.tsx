@@ -76,7 +76,7 @@ export const Home = () => {
           setValue={setTes}
         />
         <p> {tes}</p>
-        <ButtomCustom label="Bienvenido" icon={<FiActivity />} />
+        <ButtomCustom label="Bienvenido" icon={<FiActivity />} width="200px" />
       </ContainerHome>
       <RedirectLogin onClick={() => navigate("/")}>
         <ButtomCustom label="Login" width="150px" />

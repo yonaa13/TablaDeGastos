@@ -6,7 +6,7 @@ export const Login = () => {
   return (
     <ContainerLogin>
       <Redirect onClick={() => navigate("/home")}>
-        <ButtomCustom label="Home"/>
+        <ButtomCustom label="Home" width="150px"/>
       </Redirect>
     </ContainerLogin>
   );
