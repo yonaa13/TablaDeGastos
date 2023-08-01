@@ -7,7 +7,7 @@ export const ContainerExpense = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: #0e7d8c;
-  width: 70%;
+  padding: 40px;
   height: 400px;
   font-size: 1rem;
   z-index: 10000;
