@@ -7,7 +7,7 @@ export const ContainerInput = styled.div`
   width: 100%;
   margin-top: 12px;
 `;
-export const Input:any = styled.input<Props>`
+export const Input: any = styled.input<Props>`
   width: ${({ width }) => width};
   border-radius: 50px;
   text-transform: capitalize;
@@ -22,4 +22,9 @@ export const Input:any = styled.input<Props>`
     padding: 0;
     text-align: center;
   }
+`;
+export const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  width: 92px;
 `;

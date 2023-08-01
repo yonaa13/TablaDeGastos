@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { data } from "../../../firabase/DataBase";
 import { PropsModal } from "./PropsModal";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/Fa";
 import {
   ContainerModal,
   ContainerCategory,
@@ -14,7 +14,7 @@ export const ModalTabla: FC<PropsModal> = ({ id, closeModal }) => {
     <ContainerModal>
       {registro.map((ele) => {
         return (
-          <ContainerCategory>
+          <ContainerCategory key={ele.id}>
             <IconClose onClick={() => closeModal(false)}>
               <FaTimes />
             </IconClose>
@@ -22,7 +22,7 @@ export const ModalTabla: FC<PropsModal> = ({ id, closeModal }) => {
               Categoria:<Span>{ele.categoria}</Span>{" "}
             </p>
             <p>
-              Descripcion: <Span>{ele.descripcion}</Span>
+              Descripcion:<Span>{ele.descripcion}</Span>
             </p>
             <p>
               Monto:<Span>{ele.monto}</Span>{" "}

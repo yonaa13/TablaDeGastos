@@ -4,17 +4,20 @@ export const Container = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #2a549a;
-  color: #690505f3;
   z-index: 100000;
   font-size: 1rem;
-  padding: 50px;
+  padding: 40px;
   border-radius: 50px;
+  max-width: 500px;
+  color: white;
 `;
 export const H1 = styled.h1`
   padding-bottom: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   animation: text 3s;
+  color: #690505f3;
   @keyframes text {
     0% {
       opacity: 0;

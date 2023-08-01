@@ -4,5 +4,6 @@ export interface Props{
     width?:string
     placeholder?:string
     value?: string | number
+    label?:string
     setValue: Dispatch<SetStateAction<string | number>> | ((value: string | number)=> void)
- }
+}

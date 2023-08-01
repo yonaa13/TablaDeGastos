@@ -8,7 +8,7 @@ import {
   SaveExpense,
 } from "./NewExpense.stiled";
 import { PropsGastos } from "./NewExpense.interface";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/Fa";
 import { guardarDato } from "../../../firabase/DataBase";
 export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
   const [categoria, setCategoria] = useState<string | number>();
@@ -22,8 +22,9 @@ export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
       categoria: categoria,
       descripcion: descripcion,
       monto: monto,
-      completado: completado,
-      proyeccion: proyeccion,
+      completado: completado ? completado : 0,
+      proyeccion: proyeccion ? proyeccion : 0,
+      real: real ? real : 0,
     };
     guardarDato("gastos", gasto);
   };
@@ -35,44 +36,44 @@ export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
       </CloseModalGasttos>
       <H1>Nuevo gasto</H1>
       <InputCustom
+        label={"Categoria"}
         type={"text"}
-        placeholder={"Categoria"}
         value={categoria}
         setValue={setCategoria}
       />
       <InputCustom
+        label={"Descripcion"}
         type={"text"}
-        placeholder={"Descripcion"}
         value={descripcion}
         setValue={setDescripcion}
       />
       <InputCustom
+        label={"Monto"}
         type={"number"}
-        placeholder={"Monto"}
         value={monto}
         setValue={setMonto}
       />
       <InputCustom
+        label={"Completado"}
         type={"number"}
-        placeholder={"Completado"}
         value={completado}
         setValue={setCompletado}
       />
       <InputCustom
+        label={"Real"}
         type={"number"}
-        placeholder={"Real"}
         value={real}
         setValue={setReal}
       />
       <InputCustom
+        label={"Proyeccion"}
         type={"number"}
-        placeholder={"Proyeccion"}
         value={proyeccion}
         setValue={setProyeccion}
       />
 
       <SaveExpense onClick={() => handleClick()}>
-        <ButtomCustom label="Agregar" />
+        <ButtomCustom label="Agregar" width="200px" />
       </SaveExpense>
     </Container>
   );

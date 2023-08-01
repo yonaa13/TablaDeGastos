@@ -17,7 +17,7 @@ const db = getFirestore(app);
 
 export const dataBase = async () => {
   const querySnapshot = await getDocs(collection(db, "gastos"));
-  let docs: any[] = [];
+  let docs: DocumentData[] = [];
   querySnapshot.forEach((doc) => {
     docs.push({ ...doc.data(), id: doc.id });
   });
@@ -26,7 +26,7 @@ export const dataBase = async () => {
 };
 //Datos de fireStore
 export const data = () => {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<DocumentData[]>([]);
   useEffect(() => {
     dataBase()
       .then((res) => setData(res))
@@ -57,7 +57,7 @@ export const getdata = (collectionValue: string, id: string ) => {
 //editar un dato
 
 export const updateFirebaseDoc = async (collectionValue: string,id: string,newdoc: DocumentData) => {
-  let docRef = doc(db, collectionValue, id);
+  const docRef = doc(db, collectionValue, id);
   return await updateDoc(docRef, newdoc);
 };
 

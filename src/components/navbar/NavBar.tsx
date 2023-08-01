@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { ContainerNavBar, Ul, Li, SubUl, LiUser,ContainerIcon } from "./NavBar.stiled";
-import { HiArrowSmDown,HiMenu } from "react-icons/hi";
-
+import {
+  ContainerNavBar,
+  Ul,
+  Li,
+  SubUl,
+  LiUser,
+  ContainerIcon,
+} from "./NavBar.stiled";
+import { HiArrowSmDown, HiMenu } from "react-icons/hi";
 
 export const NavBar = () => {
   const [isActive, SetIsActive] = useState<boolean>(false);
@@ -11,9 +17,9 @@ export const NavBar = () => {
       <h2> SISTEMA DE GASTOS</h2>
       <Ul isActiveIcon={isActiveIcon}>
         <Li>Movimientos</Li>
-        <Li onClick={() => SetIsActive(!isActive)}>
+        <Li >
           Settings
-          <HiArrowSmDown />
+          <HiArrowSmDown onClick={() => SetIsActive(!isActive)}/>
           <SubUl isActive={isActive}>
             <Li>Back Office Users</Li>
             <Li>App Mobile Users</Li>
@@ -22,11 +28,11 @@ export const NavBar = () => {
             <Li>Preferences</Li>
           </SubUl>
         </Li>
-        <LiUser>
-          Fernando_Neirot <HiArrowSmDown />
-        </LiUser>
+        <LiUser isActive={isActive}>Fernando_Neirot</LiUser>
       </Ul>
-      <ContainerIcon onClick={() => SetIsActiveIcon(!isActiveIcon)}><HiMenu/></ContainerIcon>
+      <ContainerIcon onClick={() => SetIsActiveIcon(!isActiveIcon)}>
+        <HiMenu />
+      </ContainerIcon>
     </ContainerNavBar>
   );
 };

@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
-import { data, deleteUser, getdata } from "../../firabase/DataBase";
+import { data, deleteUser, updateFirebaseDoc } from "../../firabase/DataBase";
 import { MdDeleteForever } from "react-icons/md";
 import { BiShowAlt } from "react-icons/bi";
 import { ModalTabla } from "../../components/tabla/modalTabla/ModalTabla";
+import { UpdateExpense } from "../../components/tabla/updateExpense/UpdateExpense";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { NewExpense } from "../../components/tabla/newExpense/NewExpense";
 import {
@@ -16,51 +17,24 @@ import {
   Label,
   LabelMonto,
   ContainerIconsDelete,
-  ContainerModal,
 } from "./Tabla.stiled";
 import { useNavigate } from "react-router-dom";
+import { DocumentData } from "firebase/firestore";
 export const Tabla = () => {
-  const expenseInitial = {
-    categoria: "dfsdf",
-    descripcion: "4535",
-    monto: 10,
-    completado: 10,
-    real: 10,
-    proyeccion: 10,
-  };
+  
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalUpdate, setModalUpdate] = useState<boolean>(false);
-  const [idModalUpdate, setIdModalUpdate] = useState<string>("");
+  const [idModalUpdate, setIdModalUpdate] = useState<string>('');
   const [newExpense, setNewExpense] = useState<boolean>(false);
-  const [expense, setExpense] = useState(expenseInitial);
   const [idModal, setIdModal] = useState<number>(0);
+  const [dataUpdate, setDataUpdate] = useState<object>({});
+  const [elemento, setElemento] = useState<DocumentData>();
   const navigate = useNavigate();
-
-  const editHandler = async () => {
-      const docSnap = await getdata("gastos",idModalUpdate);
-      setExpense(
-        ((expense.categoria = docSnap.data()?.categoria),
-        (expense.descripcion = docSnap.data()?.descripcion),
-        (expense.monto = docSnap.data()?.monto),
-        (expense.completado = docSnap.data()?.completado),
-        (expense.real = docSnap.data()?.real),
-        (expense.proyeccion = docSnap.data()?.proyeccion))
-      )
-  };
+ 
   useEffect(() => {
-    if (idModalUpdate !== "") {
-      editHandler();
-    }
-  }, [idModalUpdate]);
-
-  const modalEdit =() => {
-    return(
-      <ContainerModal>
-        <p>{expense.monto}</p>
-        <p>{expense.categoria}</p>
-      </ContainerModal>
-    );
-  };
+      updateFirebaseDoc("gastos", idModalUpdate, dataUpdate);
+  }, [dataUpdate]);
+  
   return (
     <Container>
       <H1>
@@ -76,6 +50,7 @@ export const Tabla = () => {
                 onClick={() => {
                   setModalUpdate(!modalUpdate);
                   setIdModalUpdate(ele.id);
+                  setElemento(ele)
                 }}
               />
               <BiShowAlt
@@ -97,7 +72,7 @@ export const Tabla = () => {
         );
       })}
       {showModal && <ModalTabla id={idModal} closeModal={setShowModal} />}
-      {modalUpdate && modalEdit()}
+      {modalUpdate && <UpdateExpense id={idModalUpdate} closeModal={setModalUpdate} setValue={setDataUpdate} setData={elemento}/>}
       <RedirectHome onClick={() => navigate("/home")}>Ir a Home</RedirectHome>
     </Container>
   );

@@ -1,9 +1,9 @@
 export interface Data {
   id?: string;
-  categoria?: string;
-  descripcion?: string;
-  monto?: number;
-  completado?: number;
-  real?: number;
-  proyeccion?: number;
+  categoria: string | number;
+  descripcion: string | number;
+  monto: string | number;
+  completado: string | number;
+  real: string | number;
+  proyeccion: string | number;
 }

@@ -20,6 +20,9 @@ export const ContainerNavBar = styled.div<PropsNavBar>`
     transform: rotate(${({ isActive }) => (isActive ? "180deg" : "")});
   }
   @media (max-width: 720px) {
+    justify-content: space-evenly;
+  }
+  @media (max-width: 490px) {
     justify-content: start;
   }
 `;
@@ -36,21 +39,18 @@ export const Ul = styled.ul<PropsNavBar>`
   gap: 30px;
   @media (max-width: 720px) {
     position: absolute;
-    display: ${({ isActiveIcon }) => (isActiveIcon ? "flex" : "none")};
+    left: ${({ isActiveIcon }) => (isActiveIcon ? "0%" : "-100%")};
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 52px;
-    right: 0px;
+    justify-content: start;
     top: 58px;
+    gap: 10px;
     z-index: 10000;
     background-color: #179b59;
-    width: 150px;
-    height: 130px;
+    width: 50%;
+    height: 90vh;
     border-radius: 10px;
-    svg {
-      display: none;
-    }
+    transition: left 1s;
   }
 `;
 export const Li = styled.li`
@@ -63,6 +63,9 @@ export const Li = styled.li`
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  @media (max-width: 720px) {
+    padding-top: 32px;
+  }
 `;
 export const SubUl = styled.ul<PropsNavBar>`
   position: absolute;
@@ -73,16 +76,23 @@ export const SubUl = styled.ul<PropsNavBar>`
   margin-top: 170px;
   box-shadow: 8px 2px 5px black;
   @media (max-width: 720px) {
-    border-radius: 10px;
-    margin-top: 150px;
-    right:-30px;
+    display: ${({ isActive }) => (isActive ? "flex" : "none")};
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #179b59;
+    box-shadow: none;
+    width: 160px;
+    height: 300px;
+    margin-top: 350px;
   }
 `;
-export const LiUser = styled(Li)`
+export const LiUser = styled(Li)<PropsNavBar>`
   position: absolute;
   right: 13px;
+  top: 17px;
   @media (max-width: 720px) {
-    position: absolute;
-    display: block;
+    position: relative;
+    left: 0px;
+    padding-top: ${({ isActive }) => (isActive ? "300px" : "0px")};
   }
 `;
