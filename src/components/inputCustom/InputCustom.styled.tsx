@@ -26,5 +26,5 @@ export const Input: any = styled.input<Props>`
 export const Label = styled.label`
   display: flex;
   justify-content: center;
-  width: 92px;
+  width: 100px;
 `;

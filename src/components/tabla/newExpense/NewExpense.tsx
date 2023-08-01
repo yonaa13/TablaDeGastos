@@ -36,36 +36,42 @@ export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
       </CloseModalGasttos>
       <H1>Nuevo gasto</H1>
       <InputCustom
+        width="200px"
         label={"Categoria"}
         type={"text"}
         value={categoria}
         setValue={setCategoria}
       />
       <InputCustom
+        width="200px"
         label={"Descripcion"}
         type={"text"}
         value={descripcion}
         setValue={setDescripcion}
       />
       <InputCustom
+        width="200px"
         label={"Monto"}
         type={"number"}
         value={monto}
         setValue={setMonto}
       />
       <InputCustom
+        width="200px"
         label={"Completado"}
         type={"number"}
         value={completado}
         setValue={setCompletado}
       />
       <InputCustom
+        width="200px"
         label={"Real"}
         type={"number"}
         value={real}
         setValue={setReal}
       />
       <InputCustom
+        width="200px"
         label={"Proyeccion"}
         type={"number"}
         value={proyeccion}
