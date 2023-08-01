@@ -8,7 +8,7 @@ import {
   SaveExpense,
 } from "./NewExpense.stiled";
 import { PropsGastos } from "./NewExpense.interface";
-import { FaTimes } from "react-icons/Fa";
+import { FaTimes } from "react-icons/fa";
 import { guardarDato } from "../../../firabase/DataBase";
 export const NewExpense: FC<PropsGastos> = ({ closeModalGasto }) => {
   const [categoria, setCategoria] = useState<string | number>();

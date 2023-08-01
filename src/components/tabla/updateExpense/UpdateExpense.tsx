@@ -8,7 +8,7 @@ import {
 } from "./UpdateExpense.styled";
 import { InputCustom } from "../../inputCustom/InputCustom";
 import { ButtomCustom } from "../../buttomCustom/ButtomCustom";
-import { FaTimes } from "react-icons/Fa";
+import { FaTimes } from "react-icons/fa";
 export const UpdateExpense: FC<UpdateProps> = ({
   closeModal,
   setValue,
