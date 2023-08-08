@@ -11,7 +11,7 @@ export const InputCustom: FC<Props> = ({
 }): any => {
   return (
     <ContainerInput>
-      <Label>{label}</Label>
+      { label && <Label>{label}</Label>}
       <Input
         type={type}
         width={width}

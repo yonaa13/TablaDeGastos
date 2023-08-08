@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
-import { data, deleteUser, updateFirebaseDoc } from "../../firabase/DataBase";
+import { data, updateFirebaseDoc } from "../../firabase/DataBase";
 import { MdDeleteForever } from "react-icons/md";
 import { BiShowAlt } from "react-icons/bi";
 import { ModalTabla } from "../../components/tabla/modalTabla/ModalTabla";
 import { UpdateExpense } from "../../components/tabla/updateExpense/UpdateExpense";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { NewExpense } from "../../components/tabla/newExpense/NewExpense";
+import { DeleteConfirmationModal } from "../../components/tabla/deleteConfirmationModal/DeleteConfirmationModal";
 import {
   Container,
   H1,
@@ -21,20 +22,22 @@ import {
 import { useNavigate } from "react-router-dom";
 import { DocumentData } from "firebase/firestore";
 export const Tabla = () => {
-  
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalUpdate, setModalUpdate] = useState<boolean>(false);
-  const [idModalUpdate, setIdModalUpdate] = useState<string>('');
+  const [idModalUpdate, setIdModalUpdate] = useState<string>("");
   const [newExpense, setNewExpense] = useState<boolean>(false);
   const [idModal, setIdModal] = useState<number>(0);
   const [dataUpdate, setDataUpdate] = useState<object>({});
   const [elemento, setElemento] = useState<DocumentData>();
+  const [modalDeleteConfirmation, setModalDeleteConfirmation] =
+    useState<boolean>(false);
+  const [idModalDelete, setIdModalDelete] = useState<string>("");
   const navigate = useNavigate();
- 
+
   useEffect(() => {
-      updateFirebaseDoc("gastos", idModalUpdate, dataUpdate);
+    updateFirebaseDoc("gastos", idModalUpdate, dataUpdate);
   }, [dataUpdate]);
-  
+
   return (
     <Container>
       <H1>
@@ -50,7 +53,7 @@ export const Tabla = () => {
                 onClick={() => {
                   setModalUpdate(!modalUpdate);
                   setIdModalUpdate(ele.id);
-                  setElemento(ele)
+                  setElemento(ele);
                 }}
               />
               <BiShowAlt
@@ -66,13 +69,28 @@ export const Tabla = () => {
               <LabelMonto>$ {ele.monto}</LabelMonto>
             </ContainerLabel>
             <ContainerIconsDelete>
-              <MdDeleteForever onClick={() => deleteUser(ele.id)} />
+              <MdDeleteForever
+                onClick={() => {
+                  setIdModalDelete(ele.id);
+                  setModalDeleteConfirmation(!modalDeleteConfirmation);
+                }}
+              />
             </ContainerIconsDelete>
           </ContainerLista>
         );
       })}
       {showModal && <ModalTabla id={idModal} closeModal={setShowModal} />}
-      {modalUpdate && <UpdateExpense id={idModalUpdate} closeModal={setModalUpdate} setValue={setDataUpdate} setData={elemento}/>}
+      {modalUpdate && (
+        <UpdateExpense
+          id={idModalUpdate}
+          closeModal={setModalUpdate}
+          setValue={setDataUpdate}
+          setData={elemento}
+        />
+      )}
+      {modalDeleteConfirmation && (
+        <DeleteConfirmationModal id={idModalDelete} closeDeleteConfiramation={setModalDeleteConfirmation}/>
+      )}
       <RedirectHome onClick={() => navigate("/home")}>Ir a Home</RedirectHome>
     </Container>
   );
